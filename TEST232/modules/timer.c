@@ -1,25 +1,19 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <time.h> //for sleep() function
-
-#define clear() printf("\033[0d\033[2J");
 
 int main()
 
 {
 
-    printf("\033[?12l");
-
     int hour, minute, second;
-    hour=minute=second=0;
+    hour = minute = second = 0;
     
 while(1)
    
     {         
        
-    printf("%02d : %02d : %02d\n ",hour,minute,second);
+    printf("%02d : %02d : %02d\n ", hour, minute, second);
     fflush(stdin);     
-    clear();
     second++;
  
 if
