@@ -1,37 +1,30 @@
-#include <stdio.h>
+// минимальный код для создания окна при помощи библиотеки ncurses.h
+
 #include <ncurses.h>
 
  
-#define WORLD_WIDTH 50
-#define WORLD_HEIGHT 20
- 
-int main(int argc, char *argv[])
-{
-    WINDOW *border_up;
-    int offsetx, offsety;
- 
-    initscr();
-    curs_set(0);
-    refresh();
-    
-    offsetx = (COLS - WORLD_WIDTH) / 2;
-    offsety = (LINES - WORLD_HEIGHT) / 2;
- 
-    border_up = newwin(WORLD_HEIGHT,
-                           WORLD_WIDTH,
-                           offsety,
-                           offsetx);
-    box(border_up, 0, 0);
+int main()
 
-    wrefresh(border_up);
+{
+
+	initscr();
+	curs_set(0);
+    
+	WINDOW *window_main;
+   
+	window_main = newwin( 20, 20, 0, 0 );
+	box(window_main, 0, 0);
+
+	refresh();
+	wrefresh(window_main);
+        
+
+	getch();
+
+	delwin(window_main);
+	endwin();
  
-    getch();
- 
-    delwin(border_up);
- 
-    endwin();
- 
-    return 0;
+return 0;
  
 }
 
