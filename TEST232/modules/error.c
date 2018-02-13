@@ -1,10 +1,13 @@
-#include <ncurses.h>
+#include "error.h"
 #include <stdlib.h>
+#include <ncurses.h>
 
-int main()
+void error_win()
 
 {
+
 	initscr();
+	noecho();
 	curs_set(0);
 	refresh();
 
@@ -19,6 +22,7 @@ if
 	}
 
 else
+
 	{
 
 	printw("OK: ncurses initialised. \n");	
@@ -26,4 +30,5 @@ else
 	}
 	
 	endwin();
+
 }

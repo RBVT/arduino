@@ -1,5 +1,5 @@
 #ifdef __SETTINGS_H
-define __SETTINGS_H
+#define __SETTINGS_H
 
 ifdef __g++
 extern "C" {
