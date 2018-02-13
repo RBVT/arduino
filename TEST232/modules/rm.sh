@@ -2,8 +2,15 @@
 
 clear
 
-echo этот скрипт удаляет файлы формата ".o" и ".so"
-echo v.0.1
+echo 
+
+echo rm.sh скрипт удаляет следующие файлы:
+
+echo
+
+ls *.{so,o}
+
+echo 
 
 rm error.o
 rm settings.o

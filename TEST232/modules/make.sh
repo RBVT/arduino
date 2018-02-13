@@ -2,9 +2,15 @@
 
 clear
 
-echo makefile этот скрипт компилирует файлы ".h" и ".c"
-echo v.0.1
+echo 
 
+echo make.sh скрипт компилирует следующие файлы:
+
+echo
+
+ls *.{so,o}
+
+echo
 
 gcc -Wall -fPIC -c error.c
 gcc -shared -o error.so error.o
