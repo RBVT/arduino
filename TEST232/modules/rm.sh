@@ -19,7 +19,7 @@ rm graphics.o
 
 rm errors.so
 rm config.so
-rm window.so
+rm windows.so
 rm graphics.so
 
 rm main.out
