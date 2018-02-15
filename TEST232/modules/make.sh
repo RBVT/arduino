@@ -14,7 +14,7 @@ echo
 
 gcc -Wall -fPIC -c error.c
 gcc -shared -o error.so error.o
-gcc -Wall -fPIC -c settings.c
+gcc -Wall -c -fPIC settings.c
 gcc -shared -o settings.so settings.o
 gcc -Wall -fPIC -c window.c
 gcc -shared -o window.so window.o

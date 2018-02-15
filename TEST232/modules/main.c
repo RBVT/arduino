@@ -9,10 +9,16 @@ int main()
 {
 
 error_win();
-get_size_of_win();
+
+open_scr();
+get_size_of_max_xy();
+
+main_win();
+sub_win();
 about_win();
 login_win();
-main_win();
 exit_win();
+
+close_scr();
 
 }

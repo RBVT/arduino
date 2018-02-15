@@ -1,14 +1,11 @@
-#ifdef __SETTINGS_H
-#define __SETTINGS_H
+#ifndef SETTINGS_H
+#define SETTINGS_H
 
-ifdef __g++
-extern "C" {
-#enif
+int max_x;
+int max_y;
 
-void get_size_of_win();
-
-#ifdef __g++
-}
-#endif
+void open_scr();
+int get_size_of_max_xy();
+void close_scr();
 
 #endif

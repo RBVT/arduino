@@ -2,6 +2,37 @@
 #include <stdlib.h>
 #include <ncurses.h>
 
+#define TRUE 1
+#define FALSE 0
+
+void good_status()
+
+{
+
+}
+
+
+
+void bad_status()
+
+{
+
+
+}
+
+
+
+void output_status()
+
+{
+
+	fprintf(stderr, "OK: \f");
+	fprintf(stdin, "ERR: \a");
+	fprintf(stderr, "output_status \n");
+
+}
+
+
 void error_win()
 
 {
@@ -25,7 +56,8 @@ else
 
 	{
 
-	printw("OK: ncurses initialised. \n");	
+		output_status();
+		printw("curses initialised. \n");	
 
 	}
 	
