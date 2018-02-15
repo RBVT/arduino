@@ -5,18 +5,21 @@
 #define TRUE 1
 #define FALSE 0
 
-void good_status()
+void false_status()
 
 {
+
+fprintf(stderr, "E0F : \n");
 
 }
 
 
 
-void bad_status()
+void true_status()
 
 {
 
+fprintf(stderr, "OK : \n");
 
 }
 
@@ -26,14 +29,20 @@ void output_status()
 
 {
 
-	fprintf(stderr, "OK: \f");
-	fprintf(stdin, "ERR: \a");
-	fprintf(stderr, "output_status \n");
+	fputs("output_status \n", stdout);
+
+}
+
+void parsing_status()
+
+{
+
+fputs("curses initialised. ", stdin);
 
 }
 
 
-void error_win()
+void parsing_win()
 
 {
 
@@ -47,7 +56,8 @@ if
 
 	{
 	
-	fprintf(stderr, "Error: initscr ncurses. \n");
+	false_status();
+	parsing_status();
 	exit(1);	
 
 	}
@@ -57,7 +67,7 @@ else
 	{
 
 		output_status();
-		printw("curses initialised. \n");	
+		parsing_status();	
 
 	}
 	

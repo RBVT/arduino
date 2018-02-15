@@ -8,10 +8,21 @@ int main()
 
 {
 
-error_win();
+false_status();
+true_status();
+output_status();
+parsing_status();
+parsing_win();
 
 open_scr();
 get_size_of_max_xy();
+
+
+create_win_main();
+refresh_win_main();
+
+create_win_sub();
+refresh_win_sub();
 
 main_win();
 sub_win();

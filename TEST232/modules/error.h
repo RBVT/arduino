@@ -1,15 +1,11 @@
 #ifdef __ERROR_H
 #define _ERROR_H
 
-ifdef __g++
-extern "C" {
-#enif
-
-void error_win();
-
-#ifdef __g++
-}
-#endif
+void false_status();
+void true_status();
+void output_status();
+void parsing_status();
+void parsing_win();
 
 #endif
 
