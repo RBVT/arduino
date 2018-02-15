@@ -14,7 +14,7 @@ int main()
 
 open_scr();
 
-get_size_of_max_xy(max_x, max_y);
+get_size_of_max_xy($max_x, $max_y);
 
 getch();
 
