@@ -2,9 +2,31 @@
 
 clear
 
+gcc -Wall -fPIC -c errors.c
+gcc -shared -o errors.so errors.o
+
+sleep 1
+
+gcc -Wall -fPIC -c config.c
+gcc -shared -o config.so config.o
+
+sleep 1
+
+gcc -Wall -fPIC -c windows.c
+gcc -shared -o windows.so windows.o
+
+sleep 1
+
+gcc -Wall -fPIC -c graphics.c
+gcc -shared -o graphics.so graphics.o
+
+sleep 1
+
+gcc main.c -o main.out -lcurses
+
 echo 
 
-echo make.sh скрипт компилирует следующие файлы:
+echo ~ ./make.sh скомпилированы следующие файлы:
 
 echo
 
@@ -12,10 +34,4 @@ ls *.{so,o}
 
 echo
 
-gcc -Wall -fPIC -c error.c
-gcc -shared -o error.so error.o
-gcc -Wall -fPIC -c settings.c
-gcc -shared -o settings.so settings.o
-gcc -Wall -fPIC -c window.c
-gcc -shared -o window.so window.o
-gcc main.c -o main.out -lcurses
+

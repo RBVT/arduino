@@ -4,7 +4,7 @@ clear
 
 echo 
 
-echo rm.sh скрипт удаляет следующие файлы:
+echo ~ rm.sh скрипт удалил следующие файлы:
 
 echo
 
@@ -12,12 +12,18 @@ ls *.{so,o}
 
 echo 
 
-rm error.o
-rm settings.o
-rm window.o
+rm errors.o
+rm config.o
+rm windows.o
+rm graphics.o
 
-rm error.so
-rm settings.so
+rm errors.so
+rm config.so
 rm window.so
+rm graphics.so
 
 rm main.out
+
+sleep 1
+
+clear
