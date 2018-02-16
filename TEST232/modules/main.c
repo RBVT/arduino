@@ -1,10 +1,10 @@
 #include "graphics.c"
 
-// int get_size_of_max_xy(int max_x, int max_y);
 
 int main()
 
 {
+
 
 // false_status(); 
 // true_status();
@@ -12,11 +12,13 @@ int main()
 // parsing_status();
 // parsing_win();
 
+
 open_scr();
+get_size_of_max_xy();
 
-get_size_of_max_xy($max_x, $max_y);
 
-getch();
+// get_size_of_max_x();    // получаем размер окна терминала для "x".
+// get_size_of_max_y();    // получаем размер окна терминала для "y" .
 
 create_win_main();
 refresh_win_main();

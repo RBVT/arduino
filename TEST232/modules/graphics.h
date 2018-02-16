@@ -6,10 +6,10 @@
 #define __GRAPHICS_H
 
 
+void get_size_of_max_xy();
+
 void open_scr();                      // запуск графического режима . 
 void close_scr();                     // завершение графического режима .
-
-extern get_size_of_max(int max_x, int max_y);    // получаем размер окна терминала .
 
 int erase_win_main();                 // удаление элементов в окне main .
 int erase_win_sub();                  // удаление элементов в окне sub .

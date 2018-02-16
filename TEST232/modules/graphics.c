@@ -2,37 +2,18 @@
 #include <ncurses.h>            // графика ncurses .
 
 
-WINDOW *window_main;
-WINDOW *window_sub;
+WINDOW *window_main;            // .
+WINDOW *window_sub;             // .
 
-extern int max_x;
-extern int max_y;
+int max_x, max_y;               // переменные для хранения размеров терминала .
 
-int get_size_of_max(int x, int y)
+
+void get_size_of_max_xy()      // получаем размер окна терминала .
 
 {
-
-if
-        (!initscr())
-
-        {        
-
-        getmaxyx(stdscr, x, y);
-
-        max_x = x;
-        max_y = y;
-
-        printf("max_x = %d \n", max_x);
-        printf("max_y = %d \n", max_y);
-
-        return(max_x + max_y);
-
-        }
-else
-        {
-                return(1);
-        }
-
+       
+        getmaxyx(stdscr, max_x, max_y);   // получаем размеры терминала и записываем в переменные "max_x" и "max_y" . 
+        
 }
 
 
@@ -42,8 +23,8 @@ void open_scr()               // инициализация графическо
 {
         
         initscr();
-        noecho();
-        curs_set(0);
+        noecho();             // .
+        curs_set(0);          // .
         
 }
 
@@ -55,10 +36,10 @@ void close_scr()             // закрываем графику .
 
 {
 
-        refresh();
-//        exit_win_main();
-//        exit_win_sub();
-        endwin();
+        refresh();           // .
+        exit_win_main();     // .
+        exit_win_sub();      // . 
+        endwin();            // .
 
 }
 
@@ -80,7 +61,7 @@ int erase_win_sub()             // очищаем окно sub .
 
 {
 
-        werase(window_sub);
+        werase(window_sub);     // очищаем содержимое окна "sub" .
 
         return 1;
 
@@ -113,29 +94,29 @@ void refresh_win_sub()          // обновляем окно sub .
 
 
 
-void create_win_main()          // .
+void create_win_main()          // функция создания окна "main" .
 
 {
 
-        window_main = newwin( 20, 40, 0, 0 );
+        window_main = newwin( max_x, max_y, 0, 0 );
         box(window_main, 0, 0);
 
 }
 
 
 
-void create_win_sub()           // .
+void create_win_sub()           // функция создания окна "sub" .
 
 {
 
-	window_sub = newwin( 18, 38, 1, 1);
+	window_sub = newwin( max_x -2 , max_y -2, 1, 1);
         box(window_sub, 0, 0);
 
 }
 
 
 
-void exit_win_main()            // .
+void exit_win_main()            // функция закрытия окна "main" .
 
 {
 
@@ -146,7 +127,7 @@ delwin(window_main);
 
 
 
-void exit_win_sub()             // .
+void exit_win_sub()             // функция закрытия окна "sub" .
 
 {
 
@@ -157,7 +138,7 @@ delwin(window_sub);
 
 
 
-void main_win()         // .
+void main_win()         // функция отрисовки окна main .
 
 {
 
@@ -173,7 +154,7 @@ void main_win()         // .
 
 
 
-void sub_win()          //
+void sub_win()          // функция отрисовки окна sub .
 
 {
         erase_win_main();
@@ -184,7 +165,7 @@ void sub_win()          //
 
 
 
-void about_win()                //
+void about_win()                // .
 
 {
         erase_win_sub();
@@ -203,7 +184,7 @@ void about_win()                //
 
 
 
-void login_win()                //
+void login_win()                // .
 
 {
         erase_win_sub();
@@ -219,7 +200,7 @@ void login_win()                //
 
 
 
-void exit_win()         //
+void exit_win()         // .
 
 {
 
