@@ -37,8 +37,8 @@ void close_scr()             // закрываем графику .
 {
 
         refresh();           // .
-        exit_win_main();     // .
-        exit_win_sub();      // . 
+//        exit_win_main();     // .
+//        exit_win_sub();      // . 
         endwin();            // .
 
 }
@@ -161,6 +161,14 @@ void sub_win()          // функция отрисовки окна sub .
         create_win_sub();
 
 }
+
+
+
+
+
+
+
+
 
 
 

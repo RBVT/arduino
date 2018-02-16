@@ -29,14 +29,44 @@ setterm -cursor off
 
 gcc -Wall -fPIC -c graphics.c
 gcc -shared -o graphics.so graphics.o
+
+echo   - OK linking graphics.c
+echo 
+
+sleep 0.1
+
+#
+
+gcc -Wall -fPIC -c tools.c
+gcc -shared -o tools.so tools.o
+
+echo   - OK linking tools.c
+echo 
+
+sleep 0.1
+
+#
+
 gcc main.c -o main.out -lcurses
+
+echo   - OK linking main.c
+echo 
+
+sleep 0.1
+
+echo   - OK DONE!
+echo 
+
+sleep 0.1
+
+#
 
 
 echo
 
 
 tput setaf 3                                # ANSCI .
-echo "Press any key to exit ..."
+echo "- OK Press any key to exit ..."
 
 stty -echo raw
 c=$(dd bs=1 count=1 2>/dev/null )

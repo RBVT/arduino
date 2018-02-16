@@ -25,10 +25,10 @@ refresh_win_main();
 
 getch();
 
-create_win_sub();
-refresh_win_sub();
+/// create_win_sub();
+/// refresh_win_sub();
 
-getch();
+/// getch();
 
 // main_win();
 
