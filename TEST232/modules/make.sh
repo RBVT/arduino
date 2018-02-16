@@ -7,7 +7,7 @@
 
 #
 
-setterm -cursor off                          # выключаем мерцание курсора .
+setterm -cursor off                          # выключаем курсор .
 
 clear
 
@@ -16,36 +16,49 @@ clear
 tput cup 0 2                                # положение курсора .
 tput rev                                    # включение интерсии цветов .
 echo " BUILD "
+tput sgr0
 
-tput cup 0 11
+tput cup 0 9
+tput setaf 3
+echo "-"
+tput sgr0
+
+tput cup 0 10
 tput rev        
 echo " LINK "
+tput sgr0
 
-tput cup 0 19
-tput rev       
+tput cup 0 16
+tput setaf 3
+echo "-"
+tput sgr0
+
+tput cup 0 17 
+tput rev      
 echo " COMPILE "
+tput sgr0
 
-tput cup 0 30
+tput cup 0 26
+tput setaf 3
+echo "-"
+tput sgr0
+
+tput cup 0 27
 tput rev        
 echo " EXIT "
 tput sgr0
 
 #
 
+tput cup 1 6
 tput setaf 3                                # ANSCI .
-tput cup 1 2
-tput rev
-echo "         Press any key to         "
+echo " Press any key to start "
 tput sgr0
-
-tput cup 0 29
 
 stty -echo raw
 c=$(dd bs=1 count=1 2>/dev/null )
 stty echo -raw
 echo "$c"
-
-tput clear
 
 #
 
@@ -111,8 +124,6 @@ ls *.{so,o}
 
 echo
 
-setterm -cursor on
-
 tput setaf 3                                # ANSCI .
 echo "Press any key to exit ..."
 
@@ -120,6 +131,8 @@ stty -echo raw
 c=$(dd bs=1 count=1 2>/dev/null )
 stty echo -raw
 echo "$c"
+
+setterm -cursor on                          # включение курсора .
 
 tput clear
 
