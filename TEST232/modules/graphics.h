@@ -8,21 +8,21 @@
 
 void get_size_of_max_xy();
 
-void open_scr();                      // запуск графического режима . 
-void close_scr();                     // завершение графического режима .
+void open_scr();                      // запуск графического режима " ncurses ". 
+void close_scr();                     // завершение графического режима " ncurses " .
 
 void modules_output();                // отрисовка " modules " в окнах " window_main " и " window_sub " .
 
-int erase_win_main();                 // удаление элементов в окне main .
-int erase_win_sub();                  // удаление элементов в окне sub .
+int erase_win_main();                 // удаление элементов в окне " window_main " .
+int erase_win_sub();                  // удаление элементов в окне " window_sub " .
 
-void refresh_win_main();              // обновление элементов в окне main.
-void refresh_win_sub();               // обновление элементов в окне sub.
+void refresh_win_main();              // обновление элементов в окне " window_main " .
+void refresh_win_sub();               // обновление элементов в окне " window_sub " .
 
-void create_win_main();               // создание окна main .
-void create_win_sub();                // создание окна sub .
+void create_win_main();               // создание окна " window_main " .
+void create_win_sub();                // создание окна " window_sub " .
 
-void exit_win_main();                 // завершение окна main .
-void exit_win_sub();                  // завершение окна sub .
+void exit_win_main();                 // завершение окна " window_main " .
+void exit_win_sub();                  // завершение окна " window_sub " .
 
 #endif

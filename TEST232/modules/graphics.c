@@ -1,5 +1,5 @@
-#include "graphics.h"           // абстракция ncurses .
-#include <ncurses.h>            // графика ncurses .
+#include "graphics.h"           // абстракция " ncurses " .
+#include <ncurses.h>            // графика " ncurses " .
 
 
 WINDOW *window_main;            // .
@@ -12,13 +12,13 @@ void get_size_of_max_xy()      // получаем размер окна тер�
 
 {
        
-        getmaxyx(stdscr, max_x, max_y);   // получаем размеры терминала и записываем в переменные "max_x" и "max_y" . 
+        getmaxyx(stdscr, max_x, max_y);   // получаем размеры терминала и записываем в переменные " max_x " и " max_y " . 
         
 }
 
 
 
-void open_scr()               // инициализация графического режима .
+void open_scr()               // инициализация графического режима " ncurses ".
 
 {
         
@@ -32,7 +32,7 @@ void open_scr()               // инициализация графическо
 
 
 
-void close_scr()             // закрываем графику .
+void close_scr()             // закрываем графику " ncurses ".
 
 {
 
@@ -56,7 +56,7 @@ void modules_output()              // отрисовка " modules " в окна
 
 
 
-void create_win_main()          // функция создания окна "window_main" .
+void create_win_main()          // функция создания окна " window_main " .
 
 {
 
@@ -67,7 +67,7 @@ void create_win_main()          // функция создания окна "win
 
 
 
-void create_win_sub()           // функция создания окна "window_sub" .
+void create_win_sub()           // функция создания окна " window_sub " .
 
 {
 
@@ -79,7 +79,7 @@ void create_win_sub()           // функция создания окна "win
 
 
 
-void refresh_win_main()         // обновляем окно "window_main" .
+void refresh_win_main()         // обновляем окно " window_main " .
 
 {
 
@@ -91,7 +91,7 @@ void refresh_win_main()         // обновляем окно "window_main" .
 
 
 
-void refresh_win_sub()          // обновляем окно "window_sub" .
+void refresh_win_sub()          // обновляем окно " window_sub " .
 
 {
 
@@ -103,7 +103,7 @@ void refresh_win_sub()          // обновляем окно "window_sub" .
 
 
 
-int erase_win_main()            // очищаем окно "window_main" .
+int erase_win_main()            // очищаем окно " window_main " .
 
 {
 
@@ -116,11 +116,11 @@ int erase_win_main()            // очищаем окно "window_main" .
 
 
 
-int erase_win_sub()             // очищаем окно "window_sub" .
+int erase_win_sub()             // очищаем окно " window_sub " .
 
 {
 
-        werase(window_sub);     // очищаем содержимое окна "window_sub" .
+        werase(window_sub);     // очищаем содержимое окна " window_sub " .
 
         return 1;
 
@@ -129,7 +129,7 @@ int erase_win_sub()             // очищаем окно "window_sub" .
 
 
 
-void exit_win_main()            // функция закрытия окна "main" .
+void exit_win_main()            // функция закрытия окна " window_main " .
 
 {
 
@@ -140,7 +140,7 @@ delwin(window_main);
 
 
 
-void exit_win_sub()             // функция закрытия окна "window_sub" .
+void exit_win_sub()             // функция закрытия окна " window_sub " .
 
 {
 
@@ -151,7 +151,7 @@ delwin(window_sub);
 
 
 
-void main_win()         // функция отрисовки окна "window_main" .
+void main_win()         // функция отрисовки окна " window_main " .
 
 {
 
@@ -167,7 +167,7 @@ void main_win()         // функция отрисовки окна "window_ma
 
 
 
-void sub_win()          // функция отрисовки окна "window_sub" .
+void sub_win()          // функция отрисовки окна " window_sub " .
 
 {
 
