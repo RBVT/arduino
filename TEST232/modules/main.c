@@ -1,3 +1,5 @@
+#include "config.c"
+#include "keypad.c"
 #include "tools.c"
 #include "graphics.c"
 

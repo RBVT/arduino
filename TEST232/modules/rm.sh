@@ -41,16 +41,18 @@ echo
 #
 
 rm errors.o
-rm config.o
 rm tools.o
+rm config.o
+rm keypad.o
 rm windows.o
 rm graphics.o
 
 #
 
 rm errors.so
-rm config.so
 rm tools.so
+rm config.so
+rm keypad.so
 rm windows.so
 rm graphics.so
 

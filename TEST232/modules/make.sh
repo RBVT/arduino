@@ -113,12 +113,22 @@ sleep 0.1
 
 #
 
-gcc -Wall -fPIC -c windows.c
-gcc -shared -o windows.so windows.o
+# gcc -Wall -fPIC -c windows.c
+# gcc -shared -o windows.so windows.o
 
 
-echo    - OK linking windows.c
-echo
+# echo    - OK linking windows.c
+# echo
+
+# sleep 0.1
+
+#
+
+gcc -Wall -fPIC -c keypad.c
+gcc -shared -o keypad.so keypad.o
+
+echo   - OK linking keypad.c
+echo 
 
 sleep 0.1
 

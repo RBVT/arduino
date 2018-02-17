@@ -23,8 +23,6 @@ void open_scr()               // инициализация графическо
 {
         
         initscr();
-        noecho();             // .
-        curs_set(0);          // .
         
 }
 

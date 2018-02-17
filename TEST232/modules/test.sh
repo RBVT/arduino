@@ -47,6 +47,29 @@ sleep 0.1
 
 #
 
+gcc -Wall -fPIC -c config.c
+gcc -shared -o config.so config.o
+
+echo   - OK linking config.c
+echo 
+
+sleep 0.1
+
+#
+
+#
+
+gcc -Wall -fPIC -c keypad.c
+gcc -shared -o keypad.so keypad.o
+
+echo   - OK linking keypad.c
+echo 
+
+sleep 0.1
+
+#
+
+
 gcc main.c -o main.out -lcurses
 
 echo   - OK linking main.c
