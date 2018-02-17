@@ -18,7 +18,7 @@ line_5();
 open_scr();
 shadow_config();           // активация динамических опций .
 light_config();            // активация статических опций .
-get_size_of_max_xy();
+get_size_of_max_xy(settings);
 
 
 // get_size_of_max_x();    // получаем размер окна терминала для "x".

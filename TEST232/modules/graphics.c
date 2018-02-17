@@ -6,30 +6,35 @@
 WINDOW *window_main;            // .
 WINDOW *window_sub;             // .
 
-
-  int xMax, yMax;               // обьявляем переменные для хранения координат .
-  int change_of_size = 1;
+        int x,y;
 
 
-void get_size_of_max_xy()      // получаем размер окна терминала .
+        struct size
+
+        {
+
+        int max, min;
+
+        };
+
+        struct size settings;
+
+
+void get_size_of_max_xy(struct size settings)      // получаем размер окна терминала .
 
 {
 
-        getmaxyx(stdscr, xMax, yMax);   // получаем размеры терминала и записываем в переменные " max_x " и " max_y " . 
+        getmaxyx(stdscr, x, y);   // получаем размеры терминала и записываем в переменные " max_x " и " max_y " . 
         
 }
 
-        struct window_size max;
+        
+
+        
   
-        max.y = change_of_size * ( xMax );
-        max.x = change_of_size * ( yMax );
 
-
-        struct window_size min;
+        
   
-        min.x = change_of_size * ( xMax );
-        min.y = change_of_size * ( yMax );
-
 
 void open_scr()               // инициализация графического режима " ncurses ".
 
@@ -71,7 +76,7 @@ void create_win_main()          // функция создания окна " wi
 
 {
 
-        window_main = newwin( max.x, max.y, 0, 0 );
+        window_main = newwin( x, y, 0, 0 );
         box(window_main, 0, 0);
 
 }
@@ -82,7 +87,7 @@ void create_win_sub()           // функция создания окна " wi
 
 {
 
-	window_sub = newwin( max.x -2 , max.y -2, 1, 1);
+	window_sub = newwin( x -2 , y -2, 1, 1);
         box(window_sub, 0, 0);
 
 }

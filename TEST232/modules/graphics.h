@@ -6,7 +6,7 @@
 #define __GRAPHICS_H
 
 
-void get_size_of_max_xy();
+void get_size_of_max_xy(struct settings size);
 
 void open_scr();                      // запуск графического режима " ncurses ". 
 void close_scr();                     // завершение графического режима " ncurses " .
