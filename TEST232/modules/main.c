@@ -21,21 +21,24 @@ get_size_of_max_xy();
 // get_size_of_max_x();    // получаем размер окна терминала для "x".
 // get_size_of_max_y();    // получаем размер окна терминала для "y" .
 
-create_win_main();
+        create_win_main();
 
-while
-    (initscr())
+        modules_output();
+
+        timer_module();
+        
+        refresh_win_main();
+
+        getch();
+
+
+        erase_win_main();
+
+ //   
+
+ //   mvwprintw(window_main, 1, 1, "%d %d %d", hour, minute, second);
     
-    {
-
-    refresh_win_main();
-    erase_win_main();
-
-    timer_module();
-
-    mvwprintw(window_main, 1, 1, "%d %d %d", hour, minute, second);
     
-    }
 
 
 
@@ -56,6 +59,6 @@ while
 // login_win();
 // exit_win();
 
-close_scr();
+        close_scr();
 
 }

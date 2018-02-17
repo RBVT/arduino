@@ -49,7 +49,7 @@ void modules_output()              // отрисовка " modules " в окна
 
 {
 
-
+mvwprintw(window_main, 1, 1, "modules_output");
 
 
 }

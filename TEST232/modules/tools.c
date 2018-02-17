@@ -1,60 +1,60 @@
 #include "tools.h"
-#include <stdio.h>
 #include <unistd.h>
 
-int hour, minute, second;
+int hours, minutes, seconds;
 
-void timer_module()
+int timer_module()
 
 {
 
     
 //    hour = minute = second = 0;
     
-while(1)
+if
+    ( seconds++ )
    
     {         
-        
-    second++;
  
 if
-            (second == 60)
+            (seconds == 60)
  
        {
         
-            minute += 1;
-            second = 0;
+            minutes += 1;
+            seconds = 0;
         
         }
 
 if
         
-            (minute == 60)
+            (minutes == 60)
        
         {
         
-            hour += 1;
-            minute = 0;
+            hours += 1;
+            minutes = 0;
           
         }
        
 if
  
-            (hour == 24)
+            (hours == 24)
         
         {
         
-            hour = 0;
-            minute = 0;
-            second = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
         
         }
          
     sleep(1);
                 
     }
- 
-return;
+
+    seconds++;
+
+return(seconds);
 
 }
 
