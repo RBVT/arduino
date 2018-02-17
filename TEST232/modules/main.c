@@ -9,14 +9,22 @@ int main()
 {
 
 
-// false_status(); 
-// true_status();
-// output_status();
-// parsing_status();
-// parsing_win();
+// check_what_status();
+// check_what_window();
+
+
+// output_what_status();
+
+// error_is_true();
+
+// OR 
+
+// error_is_false();
 
 
 open_scr();
+shadow_config();           // активация динамических опций .
+light_config();            // активация статических опций .
 get_size_of_max_xy();
 
 

@@ -1,11 +1,13 @@
 #ifdef __ERRORS_H
 #define __ERRORS_H
 
-void false_status();
-void true_status();
-void output_status();
-void parsing_status();
-void parsing_win();
+void check_what_status();
+void check_what_window();
+
+void error_is_true();
+void error_is_false();
+
+void output_what_status();
 
 #endif
 

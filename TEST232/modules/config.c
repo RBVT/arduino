@@ -4,6 +4,13 @@
 #define TRUE 1
 #define FASLE 0
 
+void test_module()          // активируется один раз во время старта и передает снятые параметры в " shadow_config" и "light_config" .
+
+{
+
+
+
+}
 
 void shadow_config()        // динамические настройки обьектов .
 

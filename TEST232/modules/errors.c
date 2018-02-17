@@ -2,16 +2,18 @@
 #include <ncurses.h>
 
 
-#define TRUE 1
-#define FALSE 0
-
-
-
 int status;
 
 
+void check_what_status()
 
-void false_status()
+{
+
+	printf("%d ", status);
+
+}
+
+void error_is_true()
 
 {
 
@@ -21,7 +23,7 @@ void false_status()
 
 
 
-void true_status()
+void error_is_false()
 
 {
 
@@ -31,15 +33,7 @@ printf("OK : %d \n", status);
 
 
 
-void output_status()
-
-{
-
-	printf("%d ", status);
-
-}
-
-void parsing_status()
+void output_what_status()
 
 {
 
@@ -48,7 +42,7 @@ fputs("curses initialised. ", stdin);
 }
 
 
-void parsing_win()
+void check_what_window()
 
 {
 
@@ -60,7 +54,7 @@ if
 //  	EOF
 
 	status = FALSE;
-	false_status();	
+	error_is_false();	
 
 	}
 
@@ -71,7 +65,7 @@ else
 //		OK
 
 	status = TRUE;
-	true_status();	
+	error_is_true();	
 
 	}
 
