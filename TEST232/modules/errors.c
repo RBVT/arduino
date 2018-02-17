@@ -6,6 +6,7 @@ void line_1()
 {
 
 		initscr();
+		curs_set(0);
 		refresh();
 
 if
@@ -56,6 +57,7 @@ if
 
 		{
 
+		use_default_colors();
 		printf("ERR: colors \n");
 
 		}

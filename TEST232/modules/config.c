@@ -1,4 +1,5 @@
 #include "config.h"
+#include <signal.h>
 #include <ncurses.h>
 
 #define TRUE 1
@@ -20,6 +21,8 @@ noecho();                   // .
 curs_set(0);                // .
 
 nodelay(stdscr, TRUE);       // nonblocking режим для " getch() " .
+
+signal (SIGWINCH, NULL);     // terminal resize crushe glitch solution .
 
 }
 
