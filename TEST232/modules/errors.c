@@ -16,13 +16,22 @@ if
 		printf("OK : ncurses \n");
 
 		}
+
+if
+		(initscr() == NULL)
+
+		{
+
+		printf("ERR: ncurses \n");
+
+		}
+
 else
 
 	{
 
-		printf("ERR: ncurses \n");
 		getch();
-
+		endwin();
 	}
 
 }
@@ -42,12 +51,20 @@ if
 		printf("OK : colors \n");
 
 		}
+if
+		(has_colors() == FALSE)
+
+		{
+
+		printf("ERR: colors \n");
+
+		}
+
 else
 
 	{
 
-		printf("ERR: colors \n");
-		endwin();
+//	endwin();
 
 	}
 
