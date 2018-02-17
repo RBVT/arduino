@@ -1,3 +1,4 @@
+#include "errors.c"
 #include "config.c"
 #include "keypad.c"
 #include "tools.c"
@@ -8,19 +9,11 @@ int main()
 
 {
 
-
-// check_what_status();
-// check_what_window();
-
-
-// output_what_status();
-
-// error_is_true();
-
-// OR 
-
-// error_is_false();
-
+line_1();
+line_2();
+line_3();
+line_4();
+line_5();
 
 open_scr();
 shadow_config();           // активация динамических опций .
@@ -39,7 +32,7 @@ get_size_of_max_xy();
         
         refresh_win_main();
 
-        getch();
+        wgetch(window_main);
 
 
         erase_win_main();

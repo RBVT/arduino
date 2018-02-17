@@ -1,72 +1,43 @@
 #include "errors.h"
+
 #include <ncurses.h>
 
-
-int status;
-
-
-void check_what_status()
+void line_1()
 
 {
 
-	printf("%d ", status);
+printf("line_1 \n");
 
 }
 
-void error_is_true()
+void line_2()
 
 {
 
-	printf("E0F : %d \n", status);
+printf("line_2 \n");
 
 }
 
-
-
-void error_is_false()
+void line_3()
 
 {
 
-printf("OK : %d \n", status);
+printf("line_3 \n");
 
 }
 
-
-
-void output_what_status()
+void line_4()
 
 {
 
-fputs("curses initialised. ", stdin);
+printf("line_4 \n");
 
 }
 
-
-void check_what_window()
+void line_5()
 
 {
 
-if
-	(!initscr())
-
-	{
-
-//  	EOF
-
-	status = FALSE;
-	error_is_false();	
-
-	}
-
-else
-
-	{
-
-//		OK
-
-	status = TRUE;
-	error_is_true();	
-
-	}
+printf("line_5 \n");
 
 }
