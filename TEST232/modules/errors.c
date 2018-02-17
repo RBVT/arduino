@@ -1,6 +1,14 @@
 #include "errors.h"
 #include <ncurses.h>
 
+enum output_message
+
+{
+
+ncurses, colors
+
+};
+
 void line_1()
 
 {
@@ -81,14 +89,14 @@ if
 
 		{
 
-		fputs("OK : ncurses \n", stdout);
+		fputs("OK : \n", stdout);
 
 		}
 else
 
 	{
 
-		fputs("ERR: ncurses \n", stdout);
+		fputs("ERR: \n", stdout);
 
 	}
 
@@ -103,14 +111,14 @@ if
 
 		{
 
-		fputs("OK : ncurses \n", stdin);
+		fputs("OK : \n", stdin);
 
 		}
 else
 
 	{
 
-		fputs("ERR: ncurses \n", stdin);
+		fputs("ERR: \n", stdin);
 
 	}
 
@@ -125,14 +133,14 @@ if
 
 		{
 
-		fputs("OK : ncurses \n", stdin);
+		fputs("OK : \n", stdin);
 
 		}
 else
 
 	{
 
-		fputs("ERR: ncurses \n", stdin);
+		fputs("ERR: \n", stdin);
 
 	}
 
