@@ -1,20 +1,55 @@
 #include "errors.h"
-
 #include <ncurses.h>
 
 void line_1()
 
 {
 
-printf("line_1 \n");
+		initscr();
+		refresh();
+
+if
+		(initscr())
+
+		{
+
+		printf("OK : ncurses \n");
+
+		}
+else
+
+	{
+
+		printf("ERR: ncurses \n");
+		getch();
+
+	}
 
 }
 
 void line_2()
 
 {
+		has_colors();
+		refresh();
 
-printf("line_2 \n");
+if
+		(has_colors() == TRUE)
+
+		{
+
+		start_color();
+		printf("OK : colors \n");
+
+		}
+else
+
+	{
+
+		printf("ERR: colors \n");
+		endwin();
+
+	}
 
 }
 
@@ -22,7 +57,21 @@ void line_3()
 
 {
 
-printf("line_3 \n");
+if
+		(initscr())
+
+		{
+
+		fputs("OK : ncurses \n", stdout);
+
+		}
+else
+
+	{
+
+		fputs("ERR: ncurses \n", stdout);
+
+	}
 
 }
 
@@ -30,7 +79,21 @@ void line_4()
 
 {
 
-printf("line_4 \n");
+if
+		(initscr())
+
+		{
+
+		fputs("OK : ncurses \n", stdin);
+
+		}
+else
+
+	{
+
+		fputs("ERR: ncurses \n", stdin);
+
+	}
 
 }
 
@@ -38,6 +101,20 @@ void line_5()
 
 {
 
-printf("line_5 \n");
+if
+		(initscr())
+
+		{
+
+		fputs("OK : ncurses \n", stdin);
+
+		}
+else
+
+	{
+
+		fputs("ERR: ncurses \n", stdin);
+
+	}
 
 }
