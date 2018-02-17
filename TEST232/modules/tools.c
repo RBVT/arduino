@@ -2,20 +2,19 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int hour, minute, second;
 
 void timer_module()
 
 {
 
-    int hour, minute, second;
-    hour = minute = second = 0;
+    
+//    hour = minute = second = 0;
     
 while(1)
    
     {         
-       
-    printf("%02d : %02d : %02d\n ", hour, minute, second);
-    fflush(stdin);     
+        
     second++;
  
 if
@@ -55,6 +54,7 @@ if
                 
     }
  
-    return;
+return;
+
 }
 

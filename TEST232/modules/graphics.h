@@ -11,6 +11,8 @@ void get_size_of_max_xy();
 void open_scr();                      // запуск графического режима . 
 void close_scr();                     // завершение графического режима .
 
+void modules_output();                // отрисовка " modules " в окнах " window_main " и " window_sub " .
+
 int erase_win_main();                 // удаление элементов в окне main .
 int erase_win_sub();                  // удаление элементов в окне sub .
 

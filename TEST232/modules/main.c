@@ -1,3 +1,4 @@
+#include "tools.c"
 #include "graphics.c"
 
 
@@ -21,9 +22,22 @@ get_size_of_max_xy();
 // get_size_of_max_y();    // получаем размер окна терминала для "y" .
 
 create_win_main();
-refresh_win_main();
 
-getch();
+while
+    (initscr())
+    
+    {
+
+    refresh_win_main();
+    erase_win_main();
+
+    timer_module();
+
+    mvwprintw(window_main, 1, 1, "%d %d %d", hour, minute, second);
+    
+    }
+
+
 
 /// create_win_sub();
 /// refresh_win_sub();

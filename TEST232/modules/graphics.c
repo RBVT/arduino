@@ -44,7 +44,66 @@ void close_scr()             // закрываем графику .
 }
 
 
-int erase_win_main()            // очищаем окно main .
+
+void modules_output()              // отрисовка " modules " в окнах " window_main " и " window_sub " .
+
+{
+
+
+
+
+}
+
+
+
+void create_win_main()          // функция создания окна "window_main" .
+
+{
+
+        window_main = newwin( max_x, max_y, 0, 0 );
+        box(window_main, 0, 0);
+
+}
+
+
+
+void create_win_sub()           // функция создания окна "window_sub" .
+
+{
+
+	window_sub = newwin( max_x -2 , max_y -2, 1, 1);
+        box(window_sub, 0, 0);
+
+}
+
+
+
+
+void refresh_win_main()         // обновляем окно "window_main" .
+
+{
+
+        refresh();
+        wrefresh(window_main);
+
+}
+
+
+
+
+void refresh_win_sub()          // обновляем окно "window_sub" .
+
+{
+
+	refresh();
+        wrefresh(window_sub);
+
+}
+
+
+
+
+int erase_win_main()            // очищаем окно "window_main" .
 
 {
 
@@ -57,62 +116,16 @@ int erase_win_main()            // очищаем окно main .
 
 
 
-int erase_win_sub()             // очищаем окно sub .
+int erase_win_sub()             // очищаем окно "window_sub" .
 
 {
 
-        werase(window_sub);     // очищаем содержимое окна "sub" .
+        werase(window_sub);     // очищаем содержимое окна "window_sub" .
 
         return 1;
 
 }
 
-
-
-
-void refresh_win_main()         // обновляем окно main .
-
-{
-
-        refresh();
-        wrefresh(window_main);
-
-}
-
-
-
-
-void refresh_win_sub()          // обновляем окно sub .
-
-{
-
-	refresh();
-        wrefresh(window_sub);
-
-}
-
-
-
-
-void create_win_main()          // функция создания окна "main" .
-
-{
-
-        window_main = newwin( max_x, max_y, 0, 0 );
-        box(window_main, 0, 0);
-
-}
-
-
-
-void create_win_sub()           // функция создания окна "sub" .
-
-{
-
-	window_sub = newwin( max_x -2 , max_y -2, 1, 1);
-        box(window_sub, 0, 0);
-
-}
 
 
 
@@ -127,7 +140,7 @@ delwin(window_main);
 
 
 
-void exit_win_sub()             // функция закрытия окна "sub" .
+void exit_win_sub()             // функция закрытия окна "window_sub" .
 
 {
 
@@ -138,7 +151,7 @@ delwin(window_sub);
 
 
 
-void main_win()         // функция отрисовки окна main .
+void main_win()         // функция отрисовки окна "window_main" .
 
 {
 
@@ -154,9 +167,10 @@ void main_win()         // функция отрисовки окна main .
 
 
 
-void sub_win()          // функция отрисовки окна sub .
+void sub_win()          // функция отрисовки окна "window_sub" .
 
 {
+
         erase_win_main();
         create_win_sub();
 
