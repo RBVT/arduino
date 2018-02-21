@@ -9,20 +9,30 @@
 
 
 
-int open_port()                                             // возвращает -1 при ошибке .
+int open_port()                                             // возвращает -1 при ошибке открытия .
 
 {
 
     int fd;                                                 // файл дескриптор .
 
-    fd = open("/dev/USB0", O_RDWR | O_NOCTTY | O_NDELAY);
+    fd = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
 
 if
     (fd == -1)
 
     {
 
-    fd = open("/dev/ACM0", O_RDWR | O_NOCTTY | O_NDELAY);
+    fd = open("/dev/ttyUSB1", O_RDWR | O_NOCTTY | O_NDELAY);
+
+    }
+
+
+if
+    (fd == -1)
+
+    {
+
+    fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY | O_NDELAY);
 
     }
 
@@ -32,7 +42,16 @@ if
 
     {
   
-    perror("open_port: unable to open serial port \n");
+    fd = open("/dev/ttyACM1", O_RDWR | O_NOCTTY | O_NDELAY);
+  
+    }
+
+if
+    (fd == -1)
+
+    {
+  
+    perror("open_port: unable to open any serial port . \n");
   
     }
   
