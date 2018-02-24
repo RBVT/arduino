@@ -60,12 +60,3 @@ else
 return (fd);
 
 }
-
-
-int main()
-
-{
-
-open_port(fd);
-
-}
