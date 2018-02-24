@@ -2,6 +2,6 @@
 #define OPEN_H
 
 int fd;
-int open_port();   // функция для открытия порта .
+int define_port_module();   // функция для открытия порта .
 
 #endif
