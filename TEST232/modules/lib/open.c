@@ -13,8 +13,6 @@ int open_port()                                             // возвраща�
 
 {
 
-    int fd;                                                 // файл дескриптор .
-
     fd = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
 
 if
@@ -60,5 +58,14 @@ else
     fcntl(fd, F_SETFL, 0);
 
 return (fd);
+
+}
+
+
+int main()
+
+{
+
+open_port(fd);
 
 }

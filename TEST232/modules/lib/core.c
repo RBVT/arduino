@@ -26,18 +26,21 @@
 
 
 
-void define_port()     // функция для установки подключения .
+int define_port(int marker_1)     // функция для установки подключения .
 
 {
 
+settings_port(fd, speed);
 
+return (marker_1)
 
 }
 
-void open_port()       // функция для открытия порта .
+int open_port(int marker_2)       // функция для открытия порта .
 
 {
 
+open_port(int fd);
 
 }
 
