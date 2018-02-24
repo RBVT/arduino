@@ -40,7 +40,7 @@ tput setaf 3
 echo "-"
 tput sgr0
 
-tput cup 0 2                                # положение курсора .
+tput cup 0 2                                # устанавливаем положение курсора .
 tput rev                                    # включение интерсии цветов .
 echo " BUILD "
 tput sgr0
@@ -77,12 +77,13 @@ tput sgr0
 
 #
 
-
+tput cup 2 0
+echo "- OK `pwd`"
 
 #
 
-tput cup 2 0
-tput setaf 3                                # ANSCI .
+tput cup 4 0
+tput setaf 3                                # красим цветом "ANSCI" .
 echo "- OK Press any key to start .."
 tput sgr0
 
@@ -166,16 +167,21 @@ echo
 
 echo 
 
-echo ~ ./make.sh скомпилированы следующие файлы:
+tput setaf 4
+echo - OK $0 скомпилированы следующие файлы:
 
-echo
+echo 
 
-ls *.{so,o}
+echo - OK *.{o,}                            # выводим созданные файлы формата ".o" .
+echo - OK *.{so,}                           # выводим созданные файлы формата ".so" .
+tput sgr0
+
 
 echo
 
 tput setaf 3                                # ANSCI .
-echo "- OK Press any key to exit .."
+echo - OK Press any key to exit and run:
+echo - OK ~ *.{out,}                        # ыводим созданные файлы формата ".out" .
 
 stty -echo raw
 c=$(dd bs=1 count=1 2>/dev/null )
@@ -184,9 +190,9 @@ echo "$c"
 
 setterm -cursor on                          # включение курсора .
 
-tput clear
+tput clear                                  # очищаем терминал .
 
-./main.out
+./main.out                                  # запускаем "./main.out" .
 
 
 
