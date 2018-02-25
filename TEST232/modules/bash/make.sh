@@ -242,25 +242,11 @@ echo - *.{out,}                                                               # 
 
 echo 
 
-rm cerrors.o                                                                 #  .
-rm gerrors.o                                                                 #  .
-rm tools.o                                                                   #  .
-rm config.o                                                                  #  .
-rm keypad.o                                                                  #  .
-# rm windows.o                                                                 #  .
-rm graphics.o                                                                #  .
-
 #
 
-rm cerrors.so
-rm gerrors.so
-rm tools.so
-rm config.so
-rm keypad.so
-# rm windows.so
-rm graphics.so
+find . -name "*.so" -type f|xargs rm -f                                     # поиск и удаление файлов формата ".so" .
+find . -name "*.o" -type f|xargs rm -f                                      # поиск и удаление файлов формата ".o" .
 
-#
 #
 
 stty -echo raw
@@ -287,7 +273,7 @@ tput clear                                                                   # �
 
 #
 
-rm main.out                                                                  # удаляем собранное приложение .
+find . -name "*.out" -type f|xargs rm -f                                     # удаляем собранное приложение .
 
 #                                                                            # END .
 
