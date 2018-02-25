@@ -1,9 +1,5 @@
-// 1. примечание : правильно завершать сначала окно sub, а после main .
-// 2.  .
-// 3.  .
-
-#ifndef __GRAPHICS_H                   // should be #ifndef .
-#define __GRAPHICS_H
+#ifndef __GRAPHICS_H                  //  .
+#define __GRAPHICS_H                  //  .
 
 struct settings;
 

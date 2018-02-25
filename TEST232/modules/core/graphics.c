@@ -1,4 +1,5 @@
-#include "graphics.h"           // абстракция " ncurses " .
+#include "graphics.h"
+
 #include <string.h>
 #include <ncurses.h>            // графика " ncurses " .
 
