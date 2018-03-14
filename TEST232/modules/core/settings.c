@@ -1,87 +1,197 @@
-#include "settings.h"
+#include "settings.h"                                       // .
+#include "tools.c"                                          // .
+#include "dependences.c"
 
-#include <errno.h>
-#include <fcntl.h> 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <termios.h>
-#include <unistd.h>
 
-int settings_port(int fd, int speed)
+// -------------------------------------------------------------------
+
+char * define_portname_module() // функция для установки portname .
 
 {
-    
-struct termios tty;
 
+    printf ("Define adress to port : \n");
+  
 if
-    (tcgetattr(fd, &tty) < 0)
-        
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
     {
-        
-    printf("Error from tcgetattr: %s\n", strerror(errno));
-        
-return -1;
+
+remove_character_from();
 
     }
 
-    cfsetospeed(&tty, (speed_t)speed);
-    cfsetispeed(&tty, (speed_t)speed);
+    *portname = *buffer;
 
-    tty.c_cflag |= (CLOCAL | CREAD); 
-    tty.c_cflag &= ~CSIZE;
-    tty.c_cflag |= CS8;
-    tty.c_cflag &= ~PARENB;
-    tty.c_cflag &= ~CSTOPB;
-    tty.c_cflag &= ~CRTSCTS;
-
-   
-    tty.c_iflag &= ~(IGNBRK | BRKINT | PARMRK | ISTRIP | INLCR | IGNCR | ICRNL | IXON);
-    tty.c_lflag &= ~(ECHO | ECHONL | ICANON | ISIG | IEXTEN);
-    tty.c_oflag &= ~OPOST;
-
-   
-    tty.c_cc[VMIN] = 1;
-    tty.c_cc[VTIME] = 1;
-
-if
-    (tcsetattr(fd, TCSANOW, &tty) != 0)
-        
-    {
-        
-    printf("Error from tcsetattr: %s\n", strerror(errno));
-        
-return -1;
-
-    }
-
-return 0;
+return portname;
 
 }
 
-void detect_signal_port(int fd, int mcount)
+
+// -----------------------------------------------------------------------
+
+char * define_baudrate_module() // функция для установки baudrate .
+
 
 {
-    
-    struct termios tty;
 
+    printf ("Define baudrate to port : \n");
+  
 if
-    (tcgetattr(fd, &tty) < 0)
-    
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
     {
-        
-    printf("Error tcgetattr: %s\n", strerror(errno));
-        
-return;
+
+remove_character_from();
 
     }
 
-    tty.c_cc[VMIN] = mcount ? 1 : 0;
-    tty.c_cc[VTIME] = 5;
+    *baudrate = *buffer;
 
+return baudrate;
+
+}
+
+
+// ----------------------------------------------------------------------
+
+char * define_databits_module() // функция для установки databits .
+
+
+{
+
+    printf ("Define databits to port : \n");
+  
 if
-    (tcsetattr(fd, TCSANOW, &tty) < 0)
-        
-    printf("Error tcsetattr: %s\n", strerror(errno));
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
+    {
+
+remove_character_from();
+
+    }
+
+    *databits = *buffer;
+
+return databits;
+
+}
+
+
+// ----------------------------------------------------------------------
+
+char * define_parity_module() // функция для установки parity  .
+
+{
+
+    printf ("Define parity to port : \n");
+  
+if
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
+    {
+
+remove_character_from();
+
+    }
+
+    *parity = *buffer;
+
+return parity;
+
+}
+
+
+// ----------------------------------------------------------------------
+
+char * define_stopbits_module() // функция для установки stopbits .
+
+{
+
+    printf ("Define stopbits to port : \n");
+  
+if
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
+    {
+
+remove_character_from();
+
+    }
+
+    *stopbits = *buffer;
+
+return stopbits;
+
+}
+
+
+// -----------------------------------------------------------------------
+
+char * define_byteorder_module() // функция для установки byteorder .
+
+{
+
+    printf ("Define byteorder to port : \n");
+  
+if
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
+    {
+
+remove_character_from();
+
+    }
+
+    *byteorder = *buffer;
+
+return byteorder;
+
+}
+
+
+// ----------------------------------------------------------------------
+
+char * define_flowcontrol_module() // функция для установки flowcontrol .
+
+{
+
+    printf ("Define flowcontrol to port : \n");
+  
+if
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
+    {
+
+remove_character_from();
+
+    }
+
+    *flowcontrol = *buffer;
+
+return flowcontrol;
+
+}
+
+
+// ---------------------------------------------------------------------
+
+char * define_timeout_module() // функция для установки timeout .
+
+{
+
+    printf ("Define timeout to port : \n");
+  
+if
+    (fgets(buffer, sizeof(buffer), stdin) != NULL)
+
+    {
+
+remove_character_from();
+
+    }
+
+    *timeout = *buffer;
+
+return timeout;
 
 }

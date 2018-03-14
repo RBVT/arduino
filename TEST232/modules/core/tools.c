@@ -1,13 +1,34 @@
-#include "tools.h"
-#include <unistd.h>
+#include "tools.h"                                          // .
+#include "dependences.c"
 
 
-int timer_module()
+// ------------------------------------------------------------------------------------------------------
+
+const char *remove_character_from()                         // removing  " /n " from " buffer " module .
 
 {
+    char *output = (char *) malloc(sizeof(char) * 1);
 
-    
-//    hour = minute = second = 0;
+if
+    ((output = strchr(buffer, '\n')) != NULL)
+
+    {
+
+    *output = '\0';
+      
+    }
+  
+return buffer;
+
+}
+
+
+
+// -------------------------------------------------------------------------------------------------------------
+
+int timer_module()                                         // timer module .
+
+{
     
 if
     ( seconds++ )
@@ -53,7 +74,7 @@ if
 
     seconds++;
 
-return(seconds);
+return(1);
 
 }
 

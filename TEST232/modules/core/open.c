@@ -1,62 +1,72 @@
-#include "open.h"                                           // .
-
-#include <stdio.h>                                          // .
-#include <string.h>                                         // .
-#include <unistd.h>                                         // .
-#include <fcntl.h>                                          // .
-#include <errno.h>                                          // .
-#include <termios.h>                                        // .
+#include "open.h"  
+#include "settings.h"                                         // .
+#include "dependences.c"                                        // .
 
 
+// -------------------------------------------------------------------
 
-int define_port_module()                                             // возвращает -1 при ошибке открытия .
+int open_port_module()                                               // открываем порт сохраненный в " portname " .
 
 {
 
-    fd = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
+    fd = open(portname, O_RDWR | O_NOCTTY | O_SYNC);                 // opening port .
+
+    return (fd);
+
+}
+
+
+
+int status_port_module()                                           // проверяем статус " fd " .
+
+{
 
 if
-    (fd == -1)
-
+    (fd < 0)
+    
     {
-
-    fd = open("/dev/ttyUSB1", O_RDWR | O_NOCTTY | O_NDELAY);
-
+    
+    printf("%s \n", strerror(errno));
+    
     }
 
-
-if
-    (fd == -1)
-
-    {
-
-    fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY | O_NDELAY);
-
-    }
-
-
-if
-    (fd == -1)
-
-    {
-  
-    fd = open("/dev/ttyACM1", O_RDWR | O_NOCTTY | O_NDELAY);
-  
-    }
-
-if
-    (fd == -1)
-
-    {
-  
-    perror("open_port: unable to open any serial port . \n");
-  
-    }
-  
 else
-   
-    fcntl(fd, F_SETFL, 0);
+    
+    {
 
+    fputs("- OK \n", stdout);
+
+    }
+
+    return(fd);
+
+}
+
+
+
+int settings_port_module()
+
+{
+
+if
+    (fd >= 0)
+
+    {
+  
+    printf("read.c : reading!");
+  
+    }
+  
 return (fd);
+
+}
+
+
+
+int signal_port_module()
+
+{
+
+return(signal);
 
 }

@@ -3,5 +3,6 @@
 
 int choice;
 void keyboard_module();
+void choice_module();
 
 #endif

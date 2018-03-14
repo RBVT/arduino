@@ -205,6 +205,88 @@ gcc -shared -o graphics.so graphics.o
 sleep 0.1
 
 #
+#-----------------------------------------------------------------------------------------------------------------------------
+#
+
+echo 
+tput setaf 5                                                                 # активируем цвет "ANSCI" .
+echo   - OK linking open.c                                               #  .
+tput sgr0                                                                    # отключение атрибутов "ANSCI" .
+echo 
+
+gcc -Wall -fPIC -c open.c
+gcc -shared -o open.so open.o
+
+
+sleep 0.1
+
+#
+
+#
+
+echo 
+tput setaf 5                                                                 # активируем цвет "ANSCI" .
+echo   - OK linking read.c                                               #  .
+tput sgr0                                                                    # отключение атрибутов "ANSCI" .
+echo 
+
+gcc -Wall -fPIC -c read.c
+gcc -shared -o read.so read.o
+
+
+sleep 0.1
+
+#
+
+#
+
+echo 
+tput setaf 5                                                                 # активируем цвет "ANSCI" .
+echo   - OK linking send.c                                               #  .
+tput sgr0                                                                    # отключение атрибутов "ANSCI" .
+echo 
+
+gcc -Wall -fPIC -c send.c
+gcc -shared -o send.so send.o
+
+
+sleep 0.1
+
+#
+
+#
+
+echo 
+tput setaf 5                                                                 # активируем цвет "ANSCI" .
+echo   - OK linking settings.c                                               #  .
+tput sgr0                                                                    # отключение атрибутов "ANSCI" .
+echo 
+
+gcc -Wall -fPIC -c settings.c
+gcc -shared -o settings.so settings.o
+
+
+sleep 0.1
+
+#
+
+#
+
+echo 
+tput setaf 5                                                                 # активируем цвет "ANSCI" .
+echo   - OK linking core.c                                               #  .
+tput sgr0                                                                    # отключение атрибутов "ANSCI" .
+echo 
+
+gcc -Wall -fPIC -c core.c
+gcc -shared -o core.so core.o
+
+
+sleep 0.1
+
+#
+#-----------------------------------------------------------------------------------------------------------------------------
+#
 
 echo 
 tput setaf 5                                                                 # активируем цвет "ANSCI" .
@@ -212,7 +294,10 @@ echo    - OK building main.c                                                 #  
 tput sgr0                                                                    # отключение атрибутов "ANSCI" .
 echo 
 
-gcc main.c -o main.out -lcurses                                              # собираем приложение .
+# флаг " -lcurses " для графики на " ncurses " .
+# флаг " lpthread " для распараллеливания .
+
+gcc main.c -o main.out -lcurses -lpthread                                    # сборка приложения .
 
 echo  
 
@@ -257,7 +342,7 @@ tput sgr0                                                                    # �
 #
 
 mv ~/Desktop/modules/core/*.h ~/Desktop/modules/lib/                         # перемещаем обратно файлы формата ".h" .
-mv ~/Desktop/modules/core/main.out ~/Desktop/modules/                        # перемещаем обратно файлы формата ".h" .
+mv ~/Desktop/modules/core/main.out ~/Desktop/modules/                        # перемещаем в корневую папку файл формата ".out" .
 cd ..
 
 #

@@ -10,15 +10,23 @@ WINDOW *window_sub;             // .
         int x,y;
 
 
-        struct size
+        typedef struct
 
         {
 
-        int max, min;
+        int** max;
+        int** min;
 
-        };
+        } size;
 
-        struct settings;
+        typedef struct 
+        
+        {
+
+        int** setting_1;
+        int** setting_2;
+
+        } settings;
 
 
 void get_size_of_max_xy()      // получаем размер окна терминала .
@@ -74,6 +82,7 @@ void create_win_main()          // функция создания окна " wi
 
         window_main = newwin( x, y, 0, 0 );
         box(window_main, 0, 0);
+        mvwprintw(window_sub, 1, 1, "WINDOW_MAIN");
 
 }
 
@@ -85,6 +94,7 @@ void create_win_sub()           // функция создания окна " wi
 
 	window_sub = newwin( x -2 , y -2, 1, 1);
         box(window_sub, 0, 0);
+        mvwprintw(window_sub, 1, 1, "WINDOW_SUB");
 
 }
 
